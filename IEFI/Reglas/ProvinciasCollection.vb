@@ -121,6 +121,7 @@ Public Class ProvinciasCollection
         Dim vResultado As Boolean = False
 
         vSQL.Append("Descripcion='" & MiProvincia.Provincia & "'")
+        vSQL.Append("Provincia='" & MiProvincia.Provincia & "'")
 
         'Actualizo la tabla Rubros con el Id.
         Dim resultado As Boolean

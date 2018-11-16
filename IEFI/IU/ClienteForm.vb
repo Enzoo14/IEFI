@@ -24,6 +24,8 @@
             indice_ = value
         End Set
     End Property
+
+    'Debió llamarse IdProvincia
     Public Property ClienteCombo() As Integer
         Get
             Return ClienteCombo
@@ -36,10 +38,10 @@
     Private Sub Aceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Aceptar.Click
 
         If operacion_ <> "Agregar" Then
-            MiCliente.Id = CInt(Id.Text)
+            MiCliente.Id = CInt(IdLabel.Text)
         End If
 
-        MiCliente.Nombre = Nombre.Text
+        MiCliente.Nombre = NombreLabel.Text
         MiCliente.IdProvincia = ComboBox1.SelectedIndex
 
         Select Case operacion_
@@ -61,14 +63,20 @@
     End Sub
     Private Sub ClienteForm_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         'De donde traigo los datos
-        ComboBox1.DataSource = ClienteList.TraerClientes
+        'ComboBox1.DataSource = ClienteList.TraerClientes
+        'ComboBox1 debe ser llenado con provincias no con clientes.
+        ComboBox1.DataSource = ProvinciasList.TraerProvincias
+
         'Los valores que quiero mostrar
-        ComboBox1.DisplayMember = "Nombre"
+        'ComboBox1.DisplayMember = "Nombre"
+        ComboBox1.DisplayMember = "Provincia"
         ComboBox1.ValueMember = "Id"
 
-        ComboBox1.SelectedValue = ComboBox1
+        'ComboBox1.SelectedValue = ComboBox1
+        'El valor sleccionado proviene de la propiedad IdProvincia que se llena en la grilla.
+        ComboBox1.SelectedValue = ClienteCombo_
 
-        MiCliente.IdProvincia = CInt(ComboBox1 .SelectedValue)
+        'MiCliente.IdProvincia = CInt(ComboBox1 .SelectedValue)
     End Sub
 
     Private Sub Cancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Cancelar.Click

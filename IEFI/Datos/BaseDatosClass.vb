@@ -8,7 +8,7 @@ Imports System.Data.SqlClient
 
         'Inicializamos el string de la cadena de conexión.
 
-        Dim CadenaConexion As String = "Data Source=.\SQLEXPRESS; DataBase=IEFI; User=sa; Password= carena"
+    Dim CadenaConexion As String = "Data Source=.\SQLEXPRESS; DataBase=IEFI; User=sa; Password=carena"
 
         'Instaciamos un objeto SqlConnection pasando como parámetro la cadena
         Dim objConexion As New SqlConnection(CadenaConexion)
@@ -49,7 +49,7 @@ Imports System.Data.SqlClient
             Dim objDataTable As New DataTable
 
             'Abre la conexión a la base de datos.
-        'objConexion.Open()
+        objConexion.Open()
 
             Try
                 'Intenta llenar el datatable con el DataAdapter.

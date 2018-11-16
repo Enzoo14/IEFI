@@ -3,9 +3,13 @@
 
     Private Sub ClientesGrid_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
 
-
         'Fuente de datos del ComboBox.
         ' ClienteForm.ComboBox1.DataSource = ClienteList.TraerClientes
+        'Indicar la fuente de datos del bindinglist en este caso con ClientesList
+        ClientesCollectionBindingSource.DataSource = ClienteList.TraerClientes
+
+        'Se debe llenar provinciasList para que se muestre en la grilla.
+        ProvinciasList.TraerProvincias()
 
         ' El miembro a mostrar de la lista es MesAnio.
         'ClienteForm.ComboBox1.DisplayMember = "Nombre"
@@ -34,9 +38,12 @@
         Dim fila As Integer = DataGridView1.CurrentRow.Index
 
         'funcion que llena la grilla con los datos de base de datos
-        ClienteForm.Id.Text = ClienteList.Item(fila).Id
-        ClienteForm.Nombre.Text = ClienteList.Item(fila).Nombre
-        ClienteForm.IdProvincia.Text = ClienteList.Item(fila).IdProvincia
+        ClienteForm.IdTextBox.Text = ClienteList.Item(fila).Id
+        ClienteForm.NombreTextBox.Text = ClienteList.Item(fila).Nombre
+        'ClienteForm.IdProvinciaLabel.Text = ClienteList.Item(fila).IdProvincia
+        'La propiedad ClienteCombo en el form debió llamrse IdProvincia para que no
+        'genere confusión.
+        ClienteForm.ClienteCombo = ClienteList.Item(fila).IdProvincia
 
     End Sub
 
@@ -63,11 +70,11 @@
         DataGridView1.Rows.Item(fila).Selected = True
 
         'Coloreamos la fila de nuevo despues de modificar.
-        If ClienteList.Item(fila).Nombre Then
-            DataGridView1.Rows.Item(fila).DefaultCellStyle.BackColor = Color.Red
-        Else
-            DataGridView1.Rows.Item(fila).DefaultCellStyle.BackColor = Color.White
-        End If
+        'If ClienteList.Item(fila).Nombre Then
+        '    DataGridView1.Rows.Item(fila).DefaultCellStyle.BackColor = Color.Red
+        'Else
+        '    DataGridView1.Rows.Item(fila).DefaultCellStyle.BackColor = Color.White
+        'End If
 
     End Sub
 

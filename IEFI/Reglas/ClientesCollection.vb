@@ -180,8 +180,10 @@ Public Class ClientesCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("Descripcion='" & MiCliente.Nombre & "'")
-        vSQL.Append(",IdRubro='" & MiCliente.IdProvincia.ToString & "'")
+        'vSQL.Append("Descripcion='" & MiCliente.Nombre & "'")
+        'vSQL.Append(",IdRubro='" & MiCliente.IdProvincia.ToString & "'")
+        vSQL.Append("Nombre='" & MiCliente.Nombre & "'")
+        vSQL.Append(",IdProvincia='" & MiCliente.IdProvincia.ToString & "'")
 
         'Actualizo la tabla personas con el Id.
         Dim resultado As Boolean

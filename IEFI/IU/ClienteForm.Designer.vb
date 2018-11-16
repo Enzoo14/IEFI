@@ -22,42 +22,42 @@ Partial Class ClienteForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Id = New System.Windows.Forms.Label
-        Me.Nombre = New System.Windows.Forms.Label
-        Me.IdProvincia = New System.Windows.Forms.Label
+        Me.IdLabel = New System.Windows.Forms.Label
+        Me.NombreLabel = New System.Windows.Forms.Label
+        Me.IdProvinciaLabel = New System.Windows.Forms.Label
         Me.Aceptar = New System.Windows.Forms.Button
         Me.Cancelar = New System.Windows.Forms.Button
         Me.ComboBox1 = New System.Windows.Forms.ComboBox
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.TextBox2 = New System.Windows.Forms.TextBox
+        Me.IdTextBox = New System.Windows.Forms.TextBox
+        Me.NombreTextBox = New System.Windows.Forms.TextBox
         Me.SuspendLayout()
         '
-        'Id
+        'IdLabel
         '
-        Me.Id.AutoSize = True
-        Me.Id.Location = New System.Drawing.Point(38, 25)
-        Me.Id.Name = "Id"
-        Me.Id.Size = New System.Drawing.Size(16, 13)
-        Me.Id.TabIndex = 0
-        Me.Id.Text = "Id"
+        Me.IdLabel.AutoSize = True
+        Me.IdLabel.Location = New System.Drawing.Point(38, 25)
+        Me.IdLabel.Name = "IdLabel"
+        Me.IdLabel.Size = New System.Drawing.Size(16, 13)
+        Me.IdLabel.TabIndex = 0
+        Me.IdLabel.Text = "Id"
         '
-        'Nombre
+        'NombreLabel
         '
-        Me.Nombre.AutoSize = True
-        Me.Nombre.Location = New System.Drawing.Point(38, 70)
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.Size = New System.Drawing.Size(44, 13)
-        Me.Nombre.TabIndex = 1
-        Me.Nombre.Text = "Nombre"
+        Me.NombreLabel.AutoSize = True
+        Me.NombreLabel.Location = New System.Drawing.Point(38, 70)
+        Me.NombreLabel.Name = "NombreLabel"
+        Me.NombreLabel.Size = New System.Drawing.Size(44, 13)
+        Me.NombreLabel.TabIndex = 1
+        Me.NombreLabel.Text = "Nombre"
         '
-        'IdProvincia
+        'IdProvinciaLabel
         '
-        Me.IdProvincia.AutoSize = True
-        Me.IdProvincia.Location = New System.Drawing.Point(38, 117)
-        Me.IdProvincia.Name = "IdProvincia"
-        Me.IdProvincia.Size = New System.Drawing.Size(60, 13)
-        Me.IdProvincia.TabIndex = 2
-        Me.IdProvincia.Text = "IdProvincia"
+        Me.IdProvinciaLabel.AutoSize = True
+        Me.IdProvinciaLabel.Location = New System.Drawing.Point(38, 117)
+        Me.IdProvinciaLabel.Name = "IdProvinciaLabel"
+        Me.IdProvinciaLabel.Size = New System.Drawing.Size(60, 13)
+        Me.IdProvinciaLabel.TabIndex = 2
+        Me.IdProvinciaLabel.Text = "IdProvincia"
         '
         'Aceptar
         '
@@ -81,52 +81,52 @@ Partial Class ClienteForm
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Cordoba", "Buenos Aires", "Santa Fe"})
-        Me.ComboBox1.Location = New System.Drawing.Point(170, 114)
+        Me.ComboBox1.Location = New System.Drawing.Point(136, 114)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(153, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(183, 21)
         Me.ComboBox1.TabIndex = 5
         '
-        'TextBox1
+        'IdTextBox
         '
-        Me.TextBox1.HideSelection = False
-        Me.TextBox1.Location = New System.Drawing.Point(170, 18)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(153, 20)
-        Me.TextBox1.TabIndex = 6
+        Me.IdTextBox.HideSelection = False
+        Me.IdTextBox.Location = New System.Drawing.Point(136, 22)
+        Me.IdTextBox.Name = "IdTextBox"
+        Me.IdTextBox.Size = New System.Drawing.Size(90, 20)
+        Me.IdTextBox.TabIndex = 6
         '
-        'TextBox2
+        'NombreTextBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(170, 63)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(153, 20)
-        Me.TextBox2.TabIndex = 7
+        Me.NombreTextBox.Location = New System.Drawing.Point(136, 63)
+        Me.NombreTextBox.Name = "NombreTextBox"
+        Me.NombreTextBox.Size = New System.Drawing.Size(187, 20)
+        Me.NombreTextBox.TabIndex = 7
         '
         'ClienteForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(362, 229)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.NombreTextBox)
+        Me.Controls.Add(Me.IdTextBox)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
-        Me.Controls.Add(Me.IdProvincia)
-        Me.Controls.Add(Me.Nombre)
-        Me.Controls.Add(Me.Id)
+        Me.Controls.Add(Me.IdProvinciaLabel)
+        Me.Controls.Add(Me.NombreLabel)
+        Me.Controls.Add(Me.IdLabel)
         Me.Name = "ClienteForm"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Id As System.Windows.Forms.Label
-    Friend WithEvents Nombre As System.Windows.Forms.Label
-    Friend WithEvents IdProvincia As System.Windows.Forms.Label
+    Friend WithEvents IdLabel As System.Windows.Forms.Label
+    Friend WithEvents NombreLabel As System.Windows.Forms.Label
+    Friend WithEvents IdProvinciaLabel As System.Windows.Forms.Label
     Friend WithEvents Aceptar As System.Windows.Forms.Button
     Friend WithEvents Cancelar As System.Windows.Forms.Button
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents IdTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents NombreTextBox As System.Windows.Forms.TextBox
 
 End Class
