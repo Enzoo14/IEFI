@@ -24,113 +24,140 @@ Partial Class ClientesGrid
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ClientesGrid))
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.DataGridView = New System.Windows.Forms.DataGridView
+        Me.ClienteClassBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NomprovinciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SaldoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.Agregar = New System.Windows.Forms.ToolStripButton
-        Me.Modificar = New System.Windows.Forms.ToolStripButton
-        Me.Eliminar = New System.Windows.Forms.ToolStripButton
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
-        Me.ClientesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IdProvinciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.nomprovincia = New System.Windows.Forms.DataGridViewTextBoxColumn
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClienteClassBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        CType(Me.ClientesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DataGridView
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.IdProvinciaDataGridViewTextBoxColumn, Me.nomprovincia})
-        Me.DataGridView1.DataSource = Me.ClientesCollectionBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 27)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(587, 286)
-        Me.DataGridView1.TabIndex = 0
+        Me.DataGridView.AllowUserToAddRows = False
+        Me.DataGridView.AllowUserToDeleteRows = False
+        Me.DataGridView.AllowUserToResizeColumns = False
+        Me.DataGridView.AllowUserToResizeRows = False
+        Me.DataGridView.AutoGenerateColumns = False
+        Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.NomprovinciaDataGridViewTextBoxColumn, Me.SaldoDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn})
+        Me.DataGridView.DataSource = Me.ClienteClassBindingSource
+        Me.DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.DataGridView.Location = New System.Drawing.Point(0, 41)
+        Me.DataGridView.MultiSelect = False
+        Me.DataGridView.Name = "DataGridView"
+        Me.DataGridView.ReadOnly = True
+        Me.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView.Size = New System.Drawing.Size(601, 273)
+        Me.DataGridView.TabIndex = 0
+        '
+        'ClienteClassBindingSource
+        '
+        Me.ClienteClassBindingSource.DataSource = GetType(IEFI.ClienteClass)
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Nombre"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "IdProvincia"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "IdProvincia"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'NomprovinciaDataGridViewTextBoxColumn
+        '
+        Me.NomprovinciaDataGridViewTextBoxColumn.DataPropertyName = "nomprovincia"
+        Me.NomprovinciaDataGridViewTextBoxColumn.HeaderText = "nomprovincia"
+        Me.NomprovinciaDataGridViewTextBoxColumn.Name = "NomprovinciaDataGridViewTextBoxColumn"
+        Me.NomprovinciaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SaldoDataGridViewTextBoxColumn
+        '
+        Me.SaldoDataGridViewTextBoxColumn.DataPropertyName = "Saldo"
+        Me.SaldoDataGridViewTextBoxColumn.HeaderText = "Saldo"
+        Me.SaldoDataGridViewTextBoxColumn.Name = "SaldoDataGridViewTextBoxColumn"
+        Me.SaldoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FechaDataGridViewTextBoxColumn
+        '
+        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
+        Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
+        Me.ToolStrip1.BackColor = System.Drawing.Color.ForestGreen
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.Salir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(601, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(601, 38)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'Agregar
+        'ToolStripButton1
         '
-        Me.Agregar.Image = CType(resources.GetObject("Agregar.Image"), System.Drawing.Image)
-        Me.Agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Agregar.Name = "Agregar"
-        Me.Agregar.Size = New System.Drawing.Size(69, 22)
-        Me.Agregar.Text = "Agregar"
+        Me.ToolStripButton1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(53, 35)
+        Me.ToolStripButton1.Text = "Agregar"
+        Me.ToolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'Modificar
+        'ToolStripButton2
         '
-        Me.Modificar.Image = CType(resources.GetObject("Modificar.Image"), System.Drawing.Image)
-        Me.Modificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Modificar.Name = "Modificar"
-        Me.Modificar.Size = New System.Drawing.Size(78, 22)
-        Me.Modificar.Text = "Modificar"
+        Me.ToolStripButton2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(54, 35)
+        Me.ToolStripButton2.Text = "Eliminar"
+        Me.ToolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'Eliminar
+        'ToolStripButton3
         '
-        Me.Eliminar.Image = CType(resources.GetObject("Eliminar.Image"), System.Drawing.Image)
-        Me.Eliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Size = New System.Drawing.Size(70, 22)
-        Me.Eliminar.Text = "Eliminar"
+        Me.ToolStripButton3.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(62, 35)
+        Me.ToolStripButton3.Text = "Modificar"
+        Me.ToolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'Salir
         '
         Me.Salir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.Salir.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Salir.Image = CType(resources.GetObject("Salir.Image"), System.Drawing.Image)
-        Me.Salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Salir.Name = "Salir"
-        Me.Salir.Size = New System.Drawing.Size(49, 22)
+        Me.Salir.Size = New System.Drawing.Size(33, 35)
         Me.Salir.Text = "Salir"
-        '
-        'ClientesCollectionBindingSource
-        '
-        Me.ClientesCollectionBindingSource.DataSource = GetType(IEFI.ClientesCollection)
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdProvinciaDataGridViewTextBoxColumn
-        '
-        Me.IdProvinciaDataGridViewTextBoxColumn.DataPropertyName = "IdProvincia"
-        Me.IdProvinciaDataGridViewTextBoxColumn.HeaderText = "IdProvincia"
-        Me.IdProvinciaDataGridViewTextBoxColumn.Name = "IdProvinciaDataGridViewTextBoxColumn"
-        Me.IdProvinciaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'nomprovincia
-        '
-        Me.nomprovincia.DataPropertyName = "nomprovincia"
-        Me.nomprovincia.HeaderText = "nomprovincia"
-        Me.nomprovincia.Name = "nomprovincia"
-        Me.nomprovincia.ReadOnly = True
+        Me.Salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ClientesGrid
         '
@@ -138,26 +165,31 @@ Partial Class ClientesGrid
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(601, 314)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DataGridView)
         Me.Name = "ClientesGrid"
         Me.Text = "ClientesGrid"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClienteClassBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.ClientesCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents Agregar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents Modificar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents Eliminar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents Salir As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ClientesCollectionBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents IdDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IdProvinciaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents nomprovincia As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NomprovinciaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SaldoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FechaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ClienteClassBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
+    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Salir As System.Windows.Forms.ToolStripButton
 End Class

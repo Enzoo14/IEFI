@@ -80,6 +80,9 @@ Public Class ClientesCollection
             MiCliente.Id = CInt(dr("Id"))
             MiCliente.Nombre = dr("Nombre")
             MiCliente.IdProvincia = CInt(dr("IdProvincia"))
+            MiCliente.Fecha = CDate(dr("Fecha"))
+            MiCliente.Saldo = CInt(dr("Saldo"))
+
 
             Me.Add(MiCliente)
         Next

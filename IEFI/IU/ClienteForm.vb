@@ -51,7 +51,7 @@
 
             Case "Modificar"
                 ClienteList.ActualizarCliente(MiCliente)
-                ClientesGrid.DataGridView1.Refresh()
+                ClientesGrid.DataGridView.Refresh()
 
             Case "Eliminar"
                 ClienteList.EliminarCliente(MiCliente)
@@ -83,6 +83,28 @@
         Me.Close()
     End Sub
 
+    Private Sub TextBoxFecha_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBoxFecha.KeyPress
+
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSymbol(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+        Me.TextBoxFecha.Text = Trim(Replace(Me.TextBoxFecha.Text, "  ", " "))
+        TextBoxFecha.Select(TextBoxFecha.Text.Length, 0)
+
+    End Sub
+
  
+    
 End Class
 
